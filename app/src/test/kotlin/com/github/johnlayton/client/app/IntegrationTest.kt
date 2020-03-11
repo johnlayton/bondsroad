@@ -1,8 +1,8 @@
-package au.com.mebank.client.app
+package com.github.johnlayton.client.app
 
-import au.com.mebank.client.app.handler.InputHandler
-import au.com.mebank.client.app.model.InputResponse
-import au.com.mebank.client.app.router.InputRouter
+import com.github.johnlayton.client.app.handler.InputHandler
+import com.github.johnlayton.client.app.model.InputResponse
+import com.github.johnlayton.client.app.router.InputRouter
 import com.github.jenspiegsa.wiremockextension.ConfigureWireMock
 import com.github.jenspiegsa.wiremockextension.InjectServer
 import com.github.jenspiegsa.wiremockextension.WireMockExtension
@@ -185,7 +185,8 @@ class IntegrationTest(@Autowired val client: WebTestClient) {
     val response = client.post()
         .uri("/demo")
         .contentType(MediaType.APPLICATION_JSON)
-        .body(BodyInserters.fromValue(Rest.inputRequest))
+        .body(BodyInserters.fromValue(
+            Rest.inputRequest))
         .exchange()
         .expectStatus().isOk()
         .expectBody<InputResponse>()

@@ -1,4 +1,4 @@
-package au.com.mebank.client.app.model
+package com.github.johnlayton.client.app.model
 
 data class InputResponse(
     val id: Int = 0,

@@ -2,14 +2,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
   repositories {
+    gradlePluginPortal()
     mavenLocal()
     mavenCentral()
+    jcenter()
     maven("https://jitpack.io")
+    maven("https://plugins.gradle.org/m2/")
   }
   dependencies {
-    classpath("com.github.johnlayton", "riverhilldrive", "0.0.2")
-//    classpath("au.com.mebank.integration:riverhilldrive:0.0.1-4-g6a53bf3")
-//    classpath("com.github.johnlayton.riverhilldrive:integration.gradle.plugin:0.0.2")
+    classpath("com.github.johnlayton", "riverhilldrive", "0.0.6")
   }
   configurations {
     classpath {
@@ -72,6 +73,11 @@ allprojects {
       jvmTarget = "11"
     }
   }
+}
+
+subprojects {
+  apply(plugin = "plugin-version")
+  apply(plugin = "plugin-group")
 }
 
 val gradleWrapperVersion: String by project

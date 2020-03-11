@@ -1,4 +1,4 @@
-package au.com.mebank.client.app
+package com.github.johnlayton.client.app
 
 import org.slf4j.LoggerFactory
 import org.springframework.boot.WebApplicationType
@@ -12,13 +12,13 @@ import org.springframework.context.annotation.ComponentScans
 @SpringBootApplication
 @EnableConfigurationProperties
 @ConfigurationPropertiesScan(
-    "au.com.mebank.soap.service.sal.config"
+    "com.github.johnlayton.soap.service.sal.config"
 )
 @ComponentScans(
-    ComponentScan("au.com.mebank.client.app.handler"),
-    ComponentScan("au.com.mebank.client.app.router"),
-    ComponentScan("au.com.mebank.soap.service.sal"),
-    ComponentScan("au.com.mebank.soap.service.api")
+    ComponentScan("com.github.johnlayton.client.app.handler"),
+    ComponentScan("com.github.johnlayton.client.app.router"),
+    ComponentScan("com.github.johnlayton.soap.service.sal"),
+    ComponentScan("com.github.johnlayton.soap.service.api")
 //    ,
 //    ComponentScan("au.com.mebank.soap.service")
 )

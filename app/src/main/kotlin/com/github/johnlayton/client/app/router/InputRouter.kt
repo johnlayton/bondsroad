@@ -1,7 +1,7 @@
-package au.com.mebank.client.app.router
+package com.github.johnlayton.client.app.router
 
-import au.com.mebank.client.app.handler.InputHandler
-import au.com.mebank.client.app.model.InputResponse
+import com.github.johnlayton.client.app.handler.InputHandler
+import com.github.johnlayton.client.app.model.InputResponse
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.BodyInserters.fromValue
@@ -20,7 +20,8 @@ class InputRouter(private val handler: InputHandler) {
     fun route() = router {
         POST("/demo", handler::sayHello)
         GET("/demo") { _ ->
-            ServerResponse.ok().body(fromValue(InputResponse(1, "Hello world!!!")))
+            ServerResponse.ok().body(fromValue(
+                InputResponse(1, "Hello world!!!")))
         }
     }
 

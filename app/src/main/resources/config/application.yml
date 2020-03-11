@@ -5,6 +5,7 @@ server:
     enabled: false # Uses self-signed certificate because no key-store configuration is specified.
     client-auth:
 
+
 service:
   address: http://localhost:8092/service/demo
 

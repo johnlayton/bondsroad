@@ -21,7 +21,7 @@ val javaxXmlVersion: String by project
 val sunXmlVersion: String by project
 val javaxActivation: String by project
 val springVersion: String by project
-
+val amberleywayVersion: String by project
 dependencies {
 
   kapt("org.springframework.boot", "spring-boot-configuration-processor", springVersion)
@@ -34,8 +34,8 @@ dependencies {
   implementation("org.springframework.ws", "spring-ws-core")
 
   implementation(kotlin("stdlib-jdk8", "1.3.61"))
-  implementation("com.github.johnlayton.amberleyway", "sal", "0.0.4")
-  implementation("com.github.johnlayton.amberleyway", "api", "0.0.4")
+//  implementation("com.github.johnlayton.amberleyway", "api", amberleywayVersion)
+  implementation("com.github.johnlayton.amberleyway", "sal", amberleywayVersion)
 
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

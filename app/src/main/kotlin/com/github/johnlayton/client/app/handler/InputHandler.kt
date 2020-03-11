@@ -1,9 +1,9 @@
-package au.com.mebank.client.app.handler
+package com.github.johnlayton.client.app.handler
 
-import au.com.mebank.client.app.model.InputRequest
-import au.com.mebank.client.app.model.InputResponse
-import au.com.mebank.soap.service.sal.client.DemoClient
-import au.com.mebank.soap.service.sal.model.DemoRequest
+import com.github.johnlayton.client.app.model.InputRequest
+import com.github.johnlayton.client.app.model.InputResponse
+import com.github.johnlayton.soap.service.sal.model.DemoRequest
+import com.github.johnlayton.soap.service.sal.client.DemoClient
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -64,7 +64,7 @@ constructor(/*private val client: WebClient,*/
                 }
                 .map { response ->
                     log.info("Demo Responses -> ${response}")
-                    InputResponse(response.id, response.name)
+                  InputResponse(response.id, response.name)
                 }
                 .flatMap { response ->
                     log.info("Input Responses -> ${response}")
