@@ -25,7 +25,6 @@ import reactor.core.publisher.Mono
 import reactor.test.StepVerifier
 import java.io.File
 
-
 class MeDockerComposeContainer(file: File) : DockerComposeContainer<MeDockerComposeContainer>(file)
 
 @ExtendWith(
@@ -37,7 +36,7 @@ class MeDockerComposeContainer(file: File) : DockerComposeContainer<MeDockerComp
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     properties = [
-      "service.address=http://localhost:8080/demo",
+      "client.amberleyway.address=http://localhost:8080/amberleyway",
       "spring.main.web-application-type=reactive",
       "spring.banner.image.location=classpath:/logo.png",
       "spring.banner.image.width=75",
@@ -85,7 +84,7 @@ class ApplicationTest {
   @Test
   fun demo() {
     val wireMock = WireMock("localhost", 8080)
-    wireMock.register(WireMock.post("/demo").willReturn(
+    wireMock.register(WireMock.post("/amberleyway").willReturn(
         WireMock.aResponse().withBody(demoResponse)
             .withStatus(200)
             .withHeader("Content-Type", "application/json")

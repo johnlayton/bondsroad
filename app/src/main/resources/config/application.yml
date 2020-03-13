@@ -2,20 +2,16 @@
 server:
   port: 9091
   ssl:
-    enabled: false # Uses self-signed certificate because no key-store configuration is specified.
+    enabled: false
     client-auth:
-
-
-service:
-  address: http://localhost:8092/service/demo
 
 logging:
   level:
     root: INFO
     org.springframework.web: ERROR
-    au.com.mebank.client: INFO
-    au.com.mebank.client.app.handler: INFO
-    au.com.mebank.client.app.router: INFO
+    com.github.johnlayton.client: INFO
+    com.github.johnlayton.client.app.handler: INFO
+    com.github.johnlayton.client.app.router: INFO
 
 spring:
   banner:
@@ -40,6 +36,10 @@ management:
         prometheus: metrics
   server:
     port: 9092
+
+service:
+  address: http://localhost:8092/service/demo
+
 
 #    prometheus:
 #      enabled: true

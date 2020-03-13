@@ -1,9 +1,10 @@
-package com.github.johnlayton.client.app.handler
+package com.github.johnlayton.bondsroad.app.handler
 
-import com.github.johnlayton.client.app.model.InputRequest
-import com.github.johnlayton.client.app.model.InputResponse
-import com.github.johnlayton.soap.service.sal.model.DemoRequest
-import com.github.johnlayton.soap.service.sal.client.DemoClient
+import com.github.johnlayton.amberleyway.sal.client.AmberleyWayClient
+import com.github.johnlayton.amberleyway.sal.model.AmberleyWayRequest
+import com.github.johnlayton.amberleyway.sal.model.AmberleyWayResponse
+import com.github.johnlayton.bondsroad.app.model.InputRequest
+import com.github.johnlayton.bondsroad.app.model.InputResponse
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
@@ -16,7 +17,7 @@ import reactor.core.publisher.Mono
 class InputHandler
 @Autowired
 constructor(/*private val client: WebClient,*/
-        private val client: DemoClient
+        private val client: AmberleyWayClient
 ) {
 
 
@@ -54,7 +55,7 @@ constructor(/*private val client: WebClient,*/
                     log.info("Input request -> ${it}")
                 }
                 .map {
-                    val req = DemoRequest(it.id, it.name)
+                    val req = AmberleyWayRequest(it.id, it.name)
                     log.info("Demo request -> ${req}")
                     req
                 }

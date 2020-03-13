@@ -1,15 +1,10 @@
-package com.github.johnlayton.client.app.router
+package com.github.johnlayton.bondsroad.app.router
 
-import com.github.johnlayton.client.app.handler.InputHandler
-import com.github.johnlayton.client.app.model.InputResponse
+import com.github.johnlayton.bondsroad.app.handler.InputHandler
+import com.github.johnlayton.bondsroad.app.model.InputResponse
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.reactive.function.BodyInserters.fromValue
-import org.springframework.web.reactive.function.server.HandlerFunction
-import org.springframework.web.reactive.function.server.RequestPredicates.GET
-import org.springframework.web.reactive.function.server.RouterFunction
-import org.springframework.web.reactive.function.server.RouterFunctions
-import org.springframework.web.reactive.function.server.RouterFunctions.route
 import org.springframework.web.reactive.function.server.ServerResponse
 import org.springframework.web.reactive.function.server.router
 

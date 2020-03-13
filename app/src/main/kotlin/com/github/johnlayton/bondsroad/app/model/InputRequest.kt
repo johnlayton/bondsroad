@@ -1,4 +1,4 @@
-package com.github.johnlayton.client.app.model
+package com.github.johnlayton.bondsroad.app.model
 
 data class InputRequest(
     val id: Int = 0,
