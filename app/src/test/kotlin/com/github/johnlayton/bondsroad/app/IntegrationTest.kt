@@ -61,15 +61,15 @@ class IntegrationTest(@Autowired val client: WebTestClient) {
     val demoRequest = """
 <soap:Envelope 
   xmlns:soap="http://www.w3.org/2003/05/soap-envelope" 
-  xmlns:ser="http://mebank.com.au/service">
+  xmlns:amb="http://johnlayton.github.com/amberleyway">
    <soap:Header/>
    <soap:Body>
-      <ser:sayHello>
+      <amb:sayHello>
          <request>
             <id>1</id>
-            <name>john</name>
+            <name>John</name>
          </request>
-      </ser:sayHello>
+      </amb:sayHello>
    </soap:Body>
 </soap:Envelope>
 """.trimIndent()
@@ -78,10 +78,10 @@ class IntegrationTest(@Autowired val client: WebTestClient) {
 <soap:Envelope 
   xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
    <soap:Body>
-      <ns1:sayHelloResponse xmlns:ns1="http://mebank.com.au/service">
-         <response xmlns:ns2="http://mebank.com.au/service">
+      <ns1:sayHelloResponse xmlns:ns1="http://johnlayton.github.com/amberleyway">
+         <response xmlns:ns2="http://johnlayton.github.com/amberleyway">
             <id>1</id>
-            <name>Hello john!!!</name>
+            <name>Hello John!!!</name>
          </response>
       </ns1:sayHelloResponse>
    </soap:Body>
@@ -162,7 +162,7 @@ class IntegrationTest(@Autowired val client: WebTestClient) {
   @Test
   fun testPostInputRequest() {
 
-    givenThat(post("/service/demo").willReturn(
+    givenThat(post("/service/amberleyway").willReturn(
         aResponse().withBody(Soap.demoResponse)
             .withStatus(200)
             .withHeader("Content-Type", "application/soap+xml")

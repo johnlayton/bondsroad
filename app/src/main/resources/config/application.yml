@@ -37,12 +37,6 @@ management:
   server:
     port: 9092
 
-service:
-  address: http://localhost:8092/service/demo
-
-
-#    prometheus:
-#      enabled: true
-
-#    include: 'info,health,prometheus'
-
+client:
+  amberleyway:
+    address: http://localhost:8092/service/demo

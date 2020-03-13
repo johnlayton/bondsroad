@@ -14,6 +14,8 @@ plugins {
 
   id("publishing")
   id("maven-publish")
+
+  id("plugin-testing")
 }
 
 val apacheCXFVersion: String by project
