@@ -68,7 +68,7 @@ publishing {
 
 jib {
   to {
-    image = "johnlayton/bondsroad-app"
+    image = "johnlayton/bondsroad"
     credHelper = "osxkeychain"
   }
 }
