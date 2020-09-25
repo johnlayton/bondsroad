@@ -52,6 +52,7 @@ allprojects {
     jcenter()
     mavenLocal()
     mavenCentral()
+    gradlePluginPortal()
     maven("https://jitpack.io")
   }
 

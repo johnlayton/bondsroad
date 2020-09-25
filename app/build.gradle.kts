@@ -38,6 +38,7 @@ dependencies {
   implementation(kotlin("stdlib-jdk8", "1.3.61"))
 //  implementation("com.github.johnlayton.amberleyway", "api", amberleywayVersion)
   implementation("com.github.johnlayton.amberleyway", "sal", amberleywayVersion)
+  implementation("com.github.johnlayton.sidwellcourt", "sal", sidwellcourtVersion)
 
   testImplementation("org.springframework.boot:spring-boot-starter-test") {
     exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
@@ -68,7 +69,7 @@ publishing {
 
 jib {
   to {
-    image = "johnlayton/bondsroad-app"
+    image = "johnlayton/bondsroad"
     credHelper = "osxkeychain"
   }
 }
