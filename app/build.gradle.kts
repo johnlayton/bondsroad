@@ -24,6 +24,7 @@ val sunXmlVersion: String by project
 val javaxActivation: String by project
 val springVersion: String by project
 val amberleywayVersion: String by project
+val sidwellcourtVersion: String by project
 dependencies {
 
   kapt("org.springframework.boot", "spring-boot-configuration-processor", springVersion)
