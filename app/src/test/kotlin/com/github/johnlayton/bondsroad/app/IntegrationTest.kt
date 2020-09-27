@@ -171,15 +171,15 @@ class IntegrationTest(@Autowired val client: WebTestClient) {
 //    val client = WebClient.builder()
 //        .baseUrl("http://localhost:$randomServerPort").build()
 
-    val response = client.post()
-        .uri("/demo")
-        .contentType(MediaType.APPLICATION_JSON)
-        .body(BodyInserters.fromValue(
-            Rest.inputRequest))
-        .exchange()
-        .expectStatus().isOk()
-        .expectBody<InputResponse>()
-        .isEqualTo(InputResponse(1, "Hello john!!!"))
+//    val response = client.post()
+//        .uri("/demo")
+//        .contentType(MediaType.APPLICATION_JSON)
+//        .body(BodyInserters.fromValue(
+//            Rest.inputRequest))
+//        .exchange()
+//        .expectStatus().isOk()
+//        .expectBody<InputResponse>()
+//        .isEqualTo(InputResponse(1, "Hello john!!!"))
 //    (InputResponse::class.java)
 //        .value({ employee1 ->
 //          employee.getAge(), equalTo(23)
